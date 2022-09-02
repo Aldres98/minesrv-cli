@@ -4,4 +4,6 @@
 
 # Usage
  Just run the following command and follow prompts:
- `npx minesrv-cli`
+ 
+ `npm i minesrv-cli -g`
+  `minesrv-cli`
