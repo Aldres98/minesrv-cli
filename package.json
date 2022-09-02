@@ -1,0 +1,45 @@
+{
+  "name": "minesrv-cli",
+  "version": "1.0.12",
+  "description": "A package to easily download minecraft server packs from forge via CLI",
+  "exports": "./lib/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "npm run build && node ./lib/index.js",
+    "test": "npm run lint && npm run test:unit",
+    "test:unit": "nyc mocha",
+    "lint": "tslint -p . --fix",
+    "build": "tsc -p .",
+    "global": "npm i -g && cgx",
+    "clean:some": "rm -rf ./lib ./docs",
+    "clean:all": "rm -rf ./node_modules ./package-lock.json ./lib ./docs",
+    "refresh": "npm run clean:all && npm install",
+    "tscov": "tscov --min-coverage 90",
+    "tscov:d": "tscov --details",
+    "publish-package": "npm run build && npm publish",
+    "docs": "typedoc --out docs ./src"
+  },
+  "bin": {
+    "minesrv-cli": "./bin/minesrv-cli.js"
+  },
+  "engines": {
+    "node": "=>14.16"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/inquirer": "^9.0.1",
+    "@types/node": "^18.7.5",
+    "nodemon": "^2.0.19",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "mc-curseforge-api": "^2.2.3",
+    "node-curseforge": "^1.2.2",
+    "rxjs": "^7.5.6",
+    "yargs": "^17.5.1"
+  }
+}
